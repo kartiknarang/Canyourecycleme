@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>RECYCLE</title>
+    <style>
+      #map {
+        width: 100%;
+        height: 400px;
+        background-color: grey;
+      }
+    </style>
+    <script type="text/javascript" src= "https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDa6LXhM7PhLIwHS4FG-WVQhOtn6nKDvhA">
+    </script>
+
+    <script>
+    var map;
+    function initialize(){
+      var center = new google.maps.LatLng(37.548754, -122.059052);
+      map = new google.maps.Map(document.getElementById('map'),{
+        center:center,
+        zoom: 13
+      });
+      var request = {
+        location:center,
+        radius: 8047,
+        types:['recycling center']
+      };
+      var service = new google.maps.places.PlacesService(map);
+      service.nearbySearch(request, callback);
+
+    }
+    function callback(results, status){
+      if (status == google.maps.places.PlacesServiceStatus.OK){
+        for (var i = 0; i<results.length; i++){
+          createMarker(results[i]);
+        }
+      }
+    }
+    function createMarker(place){
+      var placeLoc = place.geometry.location;
+      var marker = new google.maps.Marker({
+        map:map,
+        position: place.geometry.location,
+        animation: google.maps.Animation.BOUNCE,
+        icon: "http://commerceprinting.com/wp-content/uploads/2015/08/recycle.png"
+      });
+    }
+
+    google.maps.event.addDomListener(window,'load',initialize);
+    </script>
+</head>
+<body>
+  <div id="map1"></div>
+  <div id="map"></div>
+<p><center><font face= "Capitals" font size="12" color="purple"><b>Can You Recycle Me?</b></font></center></p>
+<font face ="roboto"><strong><p><font size="7" color="black">The United States recycles approximately 32% of it total waste.</font></p>
+
+<p><font size="7" color="black"> This is also a huge problem in third-world countries, where people are not having the basic quality of life due to a lack of education.</font></p>
+<p><font size="7" color="black"> Since 45% of the recyclable material goes in the wrong location, we took it upon ourselves to educate the public and end this epidemic.</font></p>
+<p><font size="7" color="black">Not sure if something is recyclable? Figure out instantaneously by clicking below:</font></p>
+<p><center><font size="7" color="blue">Our app is able to figure out what your image is, and can decipher whether it can be recycled or not. It can also tell you the closest recycling center!</font></center></p>
+  <img src= "recycleloge.gif" style="width:850px;height:600px;"> <img src="http://bestanimations.com/Earth&Space/Earth/cuteearthanimation/global-warming-funny-earth-animation-11.gif" style="width:829px;height:600px"><img src="https://lh3.googleusercontent.com/-7XNy645OQj0/WSFYAxjYw4I/AAAAAAAAFsY/khCD4bG2jsYzivcM6A11Kcm8YFtC6-CxgCL0B/h748/2017-05-21.png" style="width:850px;height:600px;"<h1 align = "right">
+<body bgcolor= "#00CED1">
+
+<!--<button onclick="myFunction()">Try it</button>-->
+
+<p id="demo"></p>
+<form method="POST" action="http://54.208.17.147/zappos/detect_idk" id="form" enctype="multipart/form-data">
+  <div class="fileUpload btn-blue">
+      <span><center>Upload</center></span>
+      <center><input type="file" id="nig" class="upload" name="file"></center>
+  </div>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+	<script type="text/javascript">
+		document.getElementById("nig").onchange = function(){
+			$('#form').submit()
+		}
+
+		$('#form').submit(function(e){
+			console.log("submitted")
+
+    // FileHelper.readStringFromFileAtPath = function(pathOfFileToReadFrom)
+    //   {
+    //           var request = new XMLHttpRequest();
+    //           request.open("GET", pathOfFileToReadFrom, false);
+    //           request.send(null);
+    //           var returnValue = request.responseText;
+    //
+    //           return returnValue;
+    //     }
+        // function Read(pathOfFileToReadFrom)
+        //   {
+        //           var request = new XMLHttpRequest();
+        //           request.open("GET", pathOfFileToReadFrom, false);
+        //           request.send(null);
+        //           var returnValue = request.responseText;
+        //
+        //           return returnValue;
+          // }
+function readTextFile(file)
+{
+    var rawFile = new XMLHttpRequest();
+    rawFile.open("GET", file, false);
+    rawFile.onreadystatechange = function ()
+    {
+        if(rawFile.readyState === 4)
+        {
+            if(rawFile.status === 200 || rawFile.status == 0)
+            {
+                var allText = rawFile.responseText;
+                alert(allText);
+            }
+        }
+    }
+    rawFile.send(null);
+}
+			e.preventDefault();
+			$.ajax({
+				url: 'http://54.208.17.147/zappos/detect_idk',
+				type: 'POST',
+				data: new FormData(this),
+				processData: false,
+				contentType: false,
+				success: function(data){
+					// $('#response').text(data)
+          console.log(data);
+          var s = "";
+          var snja = 0;
+          var maxconf = 0;
+
+
+
+        var dick = {'person': 'This item is not recyclable!\n', 'bicycle': 'This item is recyclable!\n', 'car': 'This item is recyclable!\n', 'motorbike': 'This item is recyclable!\n', 'aeroplane': 'This item is recyclable!\n', 'bus': 'This item is recyclable!\n', 'train': 'This item is recyclable!\n', 'truck': 'This item is recyclable!\n', 'boat': 'This item is recyclable!\n', 'traffic light': 'This item is recyclable!\n', 'fire hydrant': 'This item is recyclable!\n', 'stop sign': 'This item is recyclable!\n', 'parking meter': 'This item is recyclable!\n', 'bench': 'This item is recyclable!\n', 'bird': 'This item is not recyclable!\n', 'cat': 'This item is not recyclable!\n', 'dog': 'This item is not recyclable!\n', 'horse': 'This item is not recyclable!\n', 'sheep': 'This item is not recyclable!\n', 'cow': 'This item is not recyclable!\n', 'elephant': 'This item is not recyclable!\n', 'bear': 'This item is not recyclable!\n', 'zebra': 'This item is not recyclable!\n', 'giraffe': 'This item is not recyclable!\n', 'backpack': 'recyclable\n', 'umbrella': 'recyclable\n', 'handbag': 'This item is not recyclable!\n', 'tie': 'recyclable\n', 'suitcase': 'This item is not recyclable!\n', 'frisbee': 'This item is not recyclable!\n', 'skis': 'recyclable\n', 'snowboard': 'This item is not recyclable!\n', 'sports ball': 'recyclable\n', 'kite': 'recyclable\n', 'baseball bat': 'recyclable\n', 'baseball glove': 'recyclable\n', 'skateboard': 'recyclable\n', 'surfboard': 'recyclable\n', 'tennis racket': 'recyclable\n', 'bottle': 'This item is recyclable!\n', 'wine glass': 'recyclable\n', 'cup': 'recyclable\n', 'fork': 'This item is not recyclable!\n', 'knife': 'recyclable\n', 'spoon': 'This item is not recyclable!\n', 'bowl': 'recyclable\n', 'banana': 'This item is not recyclable!\n', 'apple': 'This item is not recyclable!\n', 'sandwich': 'This item is not recyclable!\n', 'orange': 'This item is not recyclable!\n', 'broccoli': 'This item is not recyclable!\n', 'carrot': 'This item is not recyclable!\n', 'hot dog': 'This item is not recyclable!\n', 'pizza': 'This item is not recyclable!\n', 'donut': 'This item is not recyclable!\n', 'cake': 'This item is not recyclable!\n', 'chair': 'This item is recyclable!\n', 'sofa': 'This item is not recyclable!\n', 'pottedplant': 'This item is not recyclable!\n', 'bed': 'recyclable\n', 'diningtable': 'recyclable\n', 'toilet': 'This item is not This item is recyclable!!\n', 'tvmonitor': 'This item is recyclable!\n', 'laptop': 'This item is recyclable!\n', 'mouse ': 'This item is recyclable!\n', 'remote': 'This item is recyclable!\n', 'keyboard': 'This item is recyclable!\n', 'cell phone': 'This item is recyclable!\n', 'microwave': 'This item is recyclable!\n', 'oven': 'This item is recyclable!\n', 'toaster': 'This item is recyclable!\n', 'sink': 'This item is recyclable!\n', 'refrigerator': 'This item is not recyclable!\n', 'book': 'This item is recyclable!\n', 'clock': 'This item is recyclable!\n', 'vase': 'This item is recyclable!\n', 'scissors': 'This item is recyclable!\n', 'teddy bear': 'This item is not recyclable!\n', 'hair drier': 'This item is not recyclable!\n', 'toothbrush': 'This item is recyclable!\n'};
+
+          for(var i = 0; i < data["results"].length; i++) {
+            if(parseInt(data["results"][i].confidence) > maxconf)
+              maxconf = parseInt(data["results"][i].confidence);
+              snja = i;
+          }
+					alert(data["results"][snja].name + " ");
+          alert(dick[data["results"][snja].name]);
+				}
+			});
+		});
+	</script>
+
+<script>
+function myFunction() {
+    var recyclable;
+    var item;
+    var confidence;
+    if (confidence >= 75){
+        if (item == This item is recyclable!) {
+          console.log("This item is recyclable! Thanks for checking!");
+        }
+
+  }
+    else if (50<=confidence<75) {
+      console.log("Please take a better image or choose a clearer picture.")
+    }
+    else {
+      console.log("We can This item is not recyclable! recongnize the item.")
+    }
+}
+</script>
+
+</body>
+</html>
